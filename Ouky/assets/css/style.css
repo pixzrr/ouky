@@ -261,7 +261,7 @@ main ul li{
 
 @media screen and (max-width: 900px){
     .carrousel img{
-        width: calc(100% / 3);
+        width: 100%;
     }
 }
 
