@@ -40,10 +40,10 @@
     </table>
 
     <h3>Ajouter du contenu</h3>
-    <form action="../pages/c_traitement.php" method="post" enctype="multipart/form-data">
+    <form action="../pages/content_add.php" method="post" enctype="multipart/form-data">
         <select name="type">
             <option selected disabled>Type</option>
-            <option value="film">Film</option>
+            <option value="movie">Film</option>
             <option value="serie">Série</option>
             <option value="anime">Anime</option>
         </select>
@@ -51,15 +51,32 @@
         <input type="text" name="nom" placeholder="Titre" maxlength="100">
         <input type="text" name="year" placeholder="Année de parution" minlengh="4" maxlength="4">
         <input type="text" name="author" placeholder="Auteur" maxlength="100">
-        <textarea name="synopsis" placeholder="Synopsis" maxlength="600"></textarea>
+        <textarea name="synopsis" placeholder="Synopsis" maxlength="2000"></textarea>
 
         <input type="file" name="logo" accept="image/*" id="file">
-        <label for="file">Logo 1920x1080</label>
+        <label for="file">Logo 1920x1080
+
+        <img id="preview" src="" alt="Aperçu de l'image" style="display: none;">
+        
+        </label>
 
         <input type="submit" value="   Ajouter   ">
-    </form>
 
-    <script src="assets/scripts/file_preview.js" defer></script>
+        <script>
+    document.getElementById('file').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const img = document.getElementById('preview');
+            img.src = e.target.result;
+            img.style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+    }
+    });
+    </script>
+    </form>
 
 </main>
 <?php include '../inc/bottom.php'; ?>

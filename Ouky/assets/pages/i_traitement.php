@@ -17,13 +17,16 @@ if(!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['c_
         echo "Ce nom d'utilisateur est déjà pris. Veuillez en choisir un autre.";
     } else {
 
-    $sql = "INSERT INTO user (username, password) VALUES ('$user', '$pass');";
+    // Requête
 
-    $sql_vu = 'SELECT username FROM user WHERE username LIKE "%'.$user.'%";';
-    $sql_vp = 'SELECT password FROM user WHERE password LIKE "%'.$pass.'%";';
+    $sql = "INSERT INTO user (username, password) VALUES ('$user', '$pass');";
 
     $connexion -> query($sql);
 
+    //Test d'ajout
+
+    $sql_vu = 'SELECT username FROM user WHERE username LIKE "%'.$user.'%";';
+    $sql_vp = 'SELECT password FROM user WHERE password LIKE "%'.$pass.'%";';
 
     $v_user = $connexion -> query($sql_vu);
     $v_pass = $connexion -> query($sql_vp);
