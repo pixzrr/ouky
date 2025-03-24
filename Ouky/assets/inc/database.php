@@ -4,3 +4,4 @@ define('USER', 'root');
 define('PASS', '');
 
 $connexion = new PDO(SERVER, USER, PASS);
+?>
