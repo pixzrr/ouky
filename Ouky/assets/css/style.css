@@ -47,6 +47,14 @@ header form{
     position: relative;
 }
 
+@media screen and (max-width: 915px){
+    header form{
+        width: 0%;
+        display: none;
+    }
+}
+
+
 header form input[type="search"]{
     width: 100%;
     height: 2.75em;
@@ -452,7 +460,7 @@ main td{
 /*Deconexion*/
 
 .deconexion {
-    width: 10%;
+    width: 10em;
     text-align: center;
 
     background-color: rgb(255, 30, 30) ;
