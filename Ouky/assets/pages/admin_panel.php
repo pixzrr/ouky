@@ -12,7 +12,8 @@
             <tr>
                 <th>ID</th>
                 <th>Nom</th>
-                <th>Prénom</th>
+                <th>Mot de passe</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -32,12 +33,21 @@
                 <td><?= $r['id'] ?></td>
                 <td><?= $r['username'] ?></td>
                 <td><?= $r['password'] ?></td>
+                <td>
+                    <form action="user_sup.php" method="post">
+                        <input type="hidden" name="id" value="<?= $r['id']?>">
+                        <input type="image" src="../images/x.png" alt="supprimer">
+                    </form> 
+                </td>
             </tr>
 
 
         <?php endforeach; ?>
         </tbody>
     </table>
+    
+
+    
 
     <h3>Ajouter du contenu</h3>
     <form action="../pages/content_add.php" method="post" enctype="multipart/form-data">

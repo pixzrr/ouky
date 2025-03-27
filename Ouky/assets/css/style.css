@@ -444,6 +444,16 @@ main table{
     width: 90%;
     color: rgb(204, 204, 204);
     margin-bottom: 2em;
+    border-collapse: collapse;
+}
+
+main table tr{
+    text-align: center;
+}
+
+main table td{
+    border-top: 1px solid rgb(202, 202, 202);
+    padding: 1em 0 1em 0;
 }
 
 main th{
@@ -451,10 +461,8 @@ main th{
     padding-bottom: 1.5em;
 }
 
-main td{
-    border-top: 1px solid rgb(27, 27, 27);
-    padding: 4px 10px;
-    text-align: center;
+main th:last-child{
+    width: 1%;
 }
 
 /*Deconexion*/
