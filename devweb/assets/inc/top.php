@@ -7,7 +7,7 @@ define("ROOT", "/devweb/");
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <title>Ouky - Accueil</title>
+        <title>Ouky</title>
         <meta name="description" content="Ouky - Streaming des meilleures créations du moment">
         <meta name="author" content="Ouky entertaintement">
         <link rel="shortcut icon" href="<?= ROOT ?>assets/images/tv.png">
