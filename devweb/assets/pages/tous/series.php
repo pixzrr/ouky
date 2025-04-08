@@ -5,7 +5,7 @@
 ?>
 <main>
     <h2>Toutes les séries :</h2>
-    <section id="all_content">
+    <section>
     <?php
         foreach($serie AS $s):
         ?>
@@ -82,7 +82,11 @@
 
         <p><?= $a['synopsis'] ?></p>
 
-        <form action="../user/views/view_add.php" method="post">
+        <?php if (!empty($_SESSION['user'])){ ?>
+            <form action="../user/views/view_add.php" method="post">
+        <?php } else { ?>
+            <form action="../contenu.php" method="post">
+        <?php } ?>
             <input type="hidden" name="id" value="<?= $a['id'] ?>">
             <input type="submit" value="Voir plus">
         </form>

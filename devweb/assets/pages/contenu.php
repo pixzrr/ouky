@@ -1,6 +1,10 @@
 <?php include '../inc/top.php';
 
+if(!empty($_SESSION['content_id'])){
 $id =  $_SESSION['content_id'];
+} else {
+    $id = $_POST['id'];
+}
 
 $sql = 'SELECT * FROM catalogue WHERE id="'.$id.'";';
 include '../inc/database.php';
@@ -18,4 +22,6 @@ foreach ($contenu AS $c){?>
 <?php } ?>
 
 </main>
-<?php include '../inc/bottom.php'; ?>
+<?
+unset($_SESSION['content_id']);
+php include '../inc/bottom.php'; ?>

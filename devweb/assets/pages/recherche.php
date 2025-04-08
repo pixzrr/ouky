@@ -27,7 +27,7 @@ if(isset($_GET['search'])){
             <p><?= $r['nom'] ?></p>
 
             <div>
-                <p id="card_genre">thriller</p>
+                <p id="card_genre"><?= $r['category'] ?></p>
                 <!--Catégorie : film ou série?-->
                 <p><?= $r['type'] ?></p>
             </div>
@@ -101,7 +101,11 @@ if(isset($_GET['search'])){
 
         <p><?= $a['synopsis'] ?></p>
 
-        <form action="contenu.php" method="get">
+        <?php if (!empty($_SESSION['user'])){ ?>
+            <form action="user/views/view_add.php" method="post">
+        <?php } else { ?>
+            <form action="contenu.php" method="post">
+        <?php } ?>
             <input type="hidden" name="id" value="<?= $a['id'] ?>">
             <input type="submit" value="Voir plus">
         </form>
