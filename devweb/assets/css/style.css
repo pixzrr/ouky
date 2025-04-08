@@ -721,11 +721,16 @@ main .deconnexion a:hover{
     color: black;
 }
 
+/*Infos*/
 
-
-
-
-
+ol,li{
+    color : white;
+    list-style-position: inside;
+ 
+}
+main p{
+    color : white;
+}
 
 /*Aside*/
 

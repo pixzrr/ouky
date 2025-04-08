@@ -95,24 +95,12 @@ define("ROOT", "/devweb/");
                         <p>Profil</p>
                     </article>
                 </a>
-                <a href="<?= ROOT ?>assets/pages/user/pour_vous.php">
-                    <article>
-                        <img src="<?= ROOT ?>assets/images/clapperboard.png" alt="voir tous les films">
-                        <p>Pour vous</p>
-                    </article>
-                </a>
-                <a href="<?= ROOT ?>assets/pages/tous/films.php">
-                    <article>
-                        <img src="<?= ROOT ?>assets/images/clapperboard.png" alt="voir tous les films">
-                        <p>Suggérer</p>
-                    </article>
-                </a>
             </section>
             <?php } ?>
 
             <!--Pour tous-->
             <section>
-                <a href="<?= ROOT ?>assets/pages/tous/films.php">
+                <a href="<?= ROOT ?>assets/pages/annonce.php">
                     <article>
                         <img src="<?= ROOT ?>assets/images/clapperboard.png" alt="voir tous les films">
                         <p>Annonces</p>
@@ -121,19 +109,19 @@ define("ROOT", "/devweb/");
             </section>
 
             <section>
-                <a href="<?= ROOT ?>assets/pages/tous/films.php">
+                <a href="<?= ROOT ?>assets/pages/infos.php">
                     <article>
                         <img src="<?= ROOT ?>assets/images/clapperboard.png" alt="voir tous les films">
                         <p>À propos</p>
                     </article>
                 </a>
-                <a href="<?= ROOT ?>assets/pages/tous/films.php">
+                <a href="<?= ROOT ?>assets/pages/mentions_legales.php">
                     <article>
                         <img src="<?= ROOT ?>assets/images/clapperboard.png" alt="voir tous les films">
                         <p>Mentions légales</p>
                     </article>
                 </a>
-                <a href="<?= ROOT ?>assets/pages/tous/films.php">
+                <a href="<?= ROOT ?>assets/pages/confidentialite.php">
                     <article>
                         <img src="<?= ROOT ?>assets/images/clapperboard.png" alt="voir tous les films">
                         <p>Confidentialité</p>
