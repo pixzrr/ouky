@@ -1,0 +1,944 @@
+*{
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: rgb(9, 9, 11);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+
+
+
+/*Header*/
+
+header{
+    background-color: rgba(9, 9, 10, 0.88);
+    backdrop-filter: blur(10px); /*Flou du bg*/
+    width: 100%;
+    height: 4em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /*Ombre*/
+    position: sticky; /*On peut mettre position fixed aussi (ca change un peu l'affichage)*/
+    top: 0%;
+    z-index: 5; /*Pour que le header soit au dessus de tout*/
+}
+
+
+
+
+header section{ /*boutton menu + logo*/
+    width: 15em; /*largeur de la nav*/
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+}
+
+header section img{ /*boutton*/
+    cursor: pointer; /*quand on passe notre souris sur l'image ca fait comme si c'était un a href*/
+    margin: 0 2.5em 0 1em;
+    margin-right: 2.75em;
+
+    transition: all 0.3s ease-in-out;
+}
+
+header section img:hover{
+    rotate: 90deg;
+}
+
+header section a{ /*logo*/
+    color: white;
+    text-decoration: none;
+}
+
+header img{ /*boutton menu + autres potentielles images*/
+    width: 2em;
+    height: 2em;
+}
+
+
+
+
+header form{ /*barre de recherche*/
+    width: 50%;
+    position: relative;
+}
+
+header form input[type="search"]{ /*ajustements barre de recherche*/
+    width: 100%;
+    height: 2.75em;
+    border-radius: 1.5em;
+    border: none;
+    outline: none;
+    background-color: rgb(24, 24, 27);
+    color: rgb(128, 128, 128);
+    padding: 8px 15px ;
+
+    transition: all 0.4s ease-in-out;
+}
+
+header form input[type="search"]:hover{ /*petit agrandissement quand on passe la souris dessus*/
+    transform: scale(1.01);
+}
+
+header form input[type="search"]:focus{ /*changement de couleur + ombre quand on clique dessus*/
+    background-color: rgb(39, 39, 39);
+    color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.6);
+    transform: scale(1.01);
+}
+
+header form input[type="submit"]{ /*ajustements boutton rechercher*/
+    background: none;
+    border: none;
+    outline: none;
+    color: rgb(109, 109, 109);
+    position: absolute;
+    top : 30%;
+    right: 1.2em;
+
+    transition: all 0.4s ease-in-out;
+}
+
+header form input[type="search"]:focus + input[type="submit"]{ /*qund on clique sur la barre de recherche, le boutton rechercher (qui se situe juste après) devient plus clair*/
+    color: rgb(167, 167, 167);
+}
+
+
+
+
+header p{ /*boutton s'inscrire + boutton se connecter*/
+    width: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header p a{ /*boutton s'inscrire*/
+    background-color: rgb(255, 30, 30) ;
+    padding: 0.75em 1.75em 0.75em 1.75em;
+    border-radius: 5em;
+    font-size: 1.1em;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    margin-right: 1em;
+}
+
+header p a:first-of-type{ /*boutton se connecter*/
+    background-color: rgba(56, 56, 56, 0.158);
+    color: rgb(255, 255, 255);
+}
+
+
+
+
+header .profile{ /*boutton profil*/
+    width: 10em;
+    display: flex;
+    justify-content: flex-end;
+
+    transition: all 0.3s ease-in-out;
+}
+
+header .profile img{
+    transition: all 0.3s ease-in-out;
+}
+
+header .profile img:hover{ /*boutton profil*/
+background-color: rgb(53, 53, 53);
+transform: scale(1.05);
+}
+
+header .profile img{
+    margin-right: 1em;
+    padding: 0.3em;
+    border-radius: 50%;
+}
+
+
+
+
+
+
+
+/*Nav*/
+
+nav{
+    backdrop-filter: blur(10px); /*Flou du bg*/
+    width: 15em;
+    max-width: 20%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: sticky; /*On peut mettre position fixed aussi (ca change un peu l'affichage)*/
+    top: 4em;
+
+    transition: all 0.3s ease-in-out;
+}
+
+#burger{ /*Pour le toggle*/
+    width: 4em;
+}
+
+nav section{
+    width: 80%;
+    padding: 1em 0 1em 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-bottom: 1px solid grey ;
+}
+
+nav #mobile_search{
+    display: none;
+}
+
+nav section a{
+    width: 100%;
+    text-decoration: none;
+}
+
+nav section article{
+    width: 85%;
+    display: flex;
+    margin: 0.5em 0 0.5em 0;
+    padding: 0.5em 1em 0.5em 0.5em;
+    border-radius: 1em;
+
+    transition: all 0.2s ease-in-out;
+}
+
+#burger section article{ /*Pour le toggle*/
+    justify-content: center;
+    margin: 0.5em 0 0.5em 0.15em;
+    padding: 0.5em 0em 0.5em 0em;
+
+    transition: all 0.2s ease-in-out;
+}
+
+nav section article:hover{
+    background-color: rgb(29, 29, 29);
+}
+
+#burger section article:hover{ /*Pour le toggle*/
+    margin-left: 0.65em;
+}
+
+nav section article img{
+    margin-right: 0.5em;
+}
+
+#burger section article img{
+    margin-right: 0;
+}
+
+nav section article p{
+    color: white;
+}
+
+nav section article label{
+    color: white;
+}
+
+#burger section article p{ /*Pour le toggle*/
+    display: none;
+}
+
+
+
+
+
+
+/*Main*/
+
+main{
+    width: calc(100% - 15em); /*width de 100% moins la largeur du menu*/
+    border-top-left-radius: 1em ;
+    background-color: rgb(9, 9, 11);
+    z-index: 4;
+    overflow: hidden;
+
+    transition: all 0.3s ease-in-out;
+}
+
+#burger_main{ /*Pour le toggle*/
+    width: calc(100% - 5em);
+}
+
+#bannière{
+    width: 100%;
+    mask: linear-gradient(black, transparent);
+
+    position: sticky;
+    top: 0;
+
+    transition: all 5s ease-in-out;
+}
+
+#bannière:hover{
+    transform: scale(1.025);
+}
+
+main article section{
+    width: 20%;
+    position: absolute;
+    top: 30em;
+    right: 10%;
+    background-color: rgba(0, 0, 0, 0.644) ;
+}
+
+main article section p{
+    font-size: 1.1em;
+    color: rgba(51, 51, 51, 0.664);
+}
+
+#title{
+    margin: 1em 0 1em 0;
+}
+
+main article section a{
+    background-color: rgb(255, 30, 30) ;
+    padding: 0.5em 1.75em 0.5em 1.75em;
+    border-radius: 5em;
+    font-size: 1.5em;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    margin-right: 1em;
+}
+
+/*Cartes*/
+
+main section{
+    height: 25em;
+    width: 100%;
+    display: flex;
+}
+
+main #all_content{
+    height: fit-content;
+    flex-wrap: wrap;
+}
+
+main section article{
+    width: 15em;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#overflow{
+    width: 13.5em;
+    height: 18em;
+    border-radius: 0.75em;
+    margin-top: 0.5em;
+    overflow: hidden;
+
+    transition: all 0.3s ease-in-out;
+}
+
+#overflow:hover{
+    opacity: 0.5;
+}
+
+main section article img{
+    width: 13.5em;
+    height: 18em;
+    object-fit: cover;
+    border-radius: 0.75em;
+    cursor: pointer;
+
+    transition: all 0.3s ease-in-out;
+}
+
+#overflow img:hover{
+    transform: scale(1.05);
+}
+
+main section article p{
+    color: white;
+    width: 13.5em;
+}
+
+
+#card_title{
+    font-size: 1.1em;
+    margin-left: 1.1em;
+}
+
+main section article div {
+    width: 100%;
+}
+
+#card_genre{
+    color: rgb(201, 201, 201);
+}
+
+main section article p:first-of-type{
+    color: rgba(118, 118, 120);
+    margin-top: 0.25em;
+    text-align: center;
+}
+
+main section article div{
+    width: 13.5em;
+    display: flex;
+    justify-content: space-between;
+    margin: 0.15em 0 0.15em 0;
+}
+
+main section article div p:first-of-type{
+    width: fit-content;
+}
+
+main section article div p:last-of-type{
+    width: fit-content;
+    padding: 0.15em;
+
+    margin-bottom: 0.5em;
+    background-color:  rgb(34, 34, 34);
+    color: rgb(207, 207, 207);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 2); /*Ombre*/
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+
+
+/*Highlights*/
+
+h1{
+    background: linear-gradient(to right, red 60%, rgb(29, 29, 29));
+    background-clip: text;
+    color: transparent;
+}
+
+h2{
+    width: 100%;
+    font-size: 4em;
+    display: flex;
+    justify-content: center;
+    color: rgb(230, 0, 0);
+    margin: 0.5em 0 0em 0;
+}
+
+h3{
+    width: 100%;
+    font-size: 2.5em;
+    display: flex;
+    justify-content: center;
+    color: rgb(228, 228, 228);
+    margin: 1em 0 1em 0;
+}
+
+
+
+
+
+
+
+
+
+#message{
+    width: 100%;
+    background-color: rgb(187, 0, 0);
+    color: white;
+    margin: 1em 0 1em 0;
+    text-align: center;
+}
+
+
+
+
+
+
+
+/*Formulaires*/
+
+main form{
+    width: 25em;
+    max-width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
+
+main form select{
+    width: 30%;
+    height: 2em;
+    border-radius: 1.5em;
+    border: none;
+    background-color: rgb(24, 24, 27);
+    color: rgb(128, 128, 128);
+    padding: auto;
+    padding-left: 15px;
+    margin-bottom: 1em;
+}
+
+main form input[type="text"]{
+    width: 100%;
+    height: 2em;
+    border-radius: 1.5em;
+    border: none;
+    outline: none;
+    background-color: rgb(24, 24, 27);
+    color: rgb(128, 128, 128);
+    padding: 8px 15px ;
+    margin-bottom: 1em;
+
+    transition: all 0.1s ease-in-out;
+}
+
+main form input[type="password"]:focus{
+    outline: solid;
+}
+
+main form input[type="password"]{
+    width: 100%;
+    height: 2em;
+    border-radius: 1.5em;
+    border: none;
+    outline: none;
+    background-color: rgb(24, 24, 27);
+    color: rgb(128, 128, 128);
+    padding: 8px 15px ;
+    margin-bottom: 1em;
+
+    transition: all 0.1s ease-in-out;
+}
+
+main form input[type="text"]:focus{
+    outline: solid;
+}
+
+main textarea {
+    width: 100%;
+    height: 10em;
+    border-radius: 1.5em;
+    border: none;
+    outline: none;
+    background-color: rgb(24, 24, 27);
+    color: rgb(128, 128, 128);
+    padding: 8px 15px ;
+    margin-bottom: 1em;
+
+    transition: all 0.1s ease-in-out;
+}
+
+main form input[type="file"]{
+    display: none;
+}
+
+main form label{
+    min-width: 70%;
+    max-width: 100%;
+    min-height: 3em;
+    max-height: fit-content;
+    border-radius: 1em;
+    border: none;
+    outline: none;
+    background-color: rgb(24, 24, 27);
+    color: rgb(128, 128, 128);
+    padding: 8px 15px ;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+main form textarea:focus{
+    outline: solid;
+}
+
+main form img{
+    width: 100%;
+    margin: 2em 0 0.5em 0;
+}
+
+main form input[type="submit"]{
+    width: 50%;
+    height: 2em;
+    padding: 1em;
+    margin: 1em;
+    border-radius: 0.5em;
+    padding-bottom: 2em;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    outline: none;
+
+    transition: all 0.4s ease-in-out;
+}
+
+main form input[type="submit"]:hover{
+    background-color: rgb(172, 0, 0);
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+/*Admin pannel*/
+
+main table{
+    width: 90%;
+    color: rgb(204, 204, 204);
+    margin-bottom: 2em;
+    table-layout: fixed; /*permet de modifier les largeurs de la table comme bon nous semble*/
+}
+
+main th{
+    font-size: 1.1em;
+    padding-bottom: 1.5em;
+}
+
+main th:first-of-type, th:last-of-type{
+    width: 10%;
+}
+
+main td{
+    border-top: 1px solid rgb(27, 27, 27);
+    padding: 4px 10px;
+    text-align: center;
+}
+
+main td img{
+    width: 50%;
+}
+
+main table form input[type='image']{
+    width: 2em;
+
+}
+
+
+
+
+
+
+
+/*Page profil*/
+
+main #pfp{
+    background-color: rgb(180, 0, 0);
+    padding: 5em 90% 2em 5%;
+    width: 5%;
+
+    transition: all 1s ease-in-out;
+}
+
+main #profile_table{
+    animation-name: pfp;
+    animation-duration: 2s;
+}
+
+main #profile_table th:first-of-type, th:last-of-type{
+    width: fit-content;
+    margin-top: 50%;
+}
+
+main #profile_table th{
+    padding: 1em 0 1em 0;
+
+    transition: all 0.2s ease-in-out;
+}
+
+main #profile_table th a{
+    color: rgb(201, 201, 201);
+    text-decoration: none;
+    font-size: 1.1em;
+
+    transition: all 0.3s ease-in-out;
+}
+
+main #profile_table th a:hover{
+    color: red;
+}
+
+
+
+main #profile_table th #profile_selected{
+    color: red;
+}
+
+main #profile_table th img{
+    width: 2em;
+}
+
+
+
+
+
+
+
+/*Page de contenu*/
+
+.content_main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.content_main #content_bg{
+    width: 90%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.04;
+    mask: linear-gradient(transparent, black, transparent);
+    position: absolute;
+    right: 0;
+}
+
+.content_main video{
+    height: fit-content;
+    width: 90%;
+    border-radius: 2em;
+    opacity: 1;
+    margin: 2em 0 0em 0;
+    z-index: 0;
+
+    transition: all 0.4s ease-in-out;
+}
+
+.content_main h2{
+    width: 90%;
+    justify-content: left;
+    margin: 0.5em 0 1em 0;
+}
+
+
+
+
+
+
+
+
+/*Boutton de déconnexion*/
+
+main .deconnexion{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+main .deconnexion a{
+    width: 10em;
+    max-width: 40%;
+    border-radius: 2em;
+    padding: 0.5em;
+    text-decoration: none;
+    text-align: center;
+    background-color: rgb(32, 32, 32);
+    color: rgb(177, 177, 177);
+
+    transition: all 0.5s ease-in-out;
+}
+
+main .deconnexion a:hover{
+    background-color: red;
+    color: black;
+}
+
+
+
+
+
+
+
+/*Aside*/
+
+aside{
+    width: 30em;
+    height: 90%;
+    background-color: rgba(25, 25, 25, 0.75);
+    backdrop-filter: blur(10px); /*Flou du bg*/
+    border-radius: 2em 0 0 2em;
+    position:fixed;
+    top: 4.5em;
+    right: 0;
+    z-index: 5;
+    margin-right: -30em;
+    display: flex;
+    align-items: center;
+
+
+    transition: all 0.5s ease-in-out;
+}
+
+aside #view_less{
+    height: 98%;
+    width: 5%;
+    padding: 0 0.5em 0 0.25em;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+
+
+    transition: all 0.35s ease-in-out;
+}
+
+aside #view_less:hover{
+    padding: 0 0.7em 0 0.5em;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+aside #view_less img{
+    width: 100%;
+    height: fit-content;
+    object-fit:none;
+
+
+    transition: all 0.35s ease-in-out;
+}
+
+aside #view_less:hover > img{ /*Lorsqu'on sélectionne la div, l'image située dans la div est impactée*/
+    transform: rotate(180deg);
+}
+
+#aside{
+    margin-right: 0;
+}
+
+aside section{
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    transition: all 0.35s ease-in-out;
+}
+
+aside #view_less:hover + section{ /*Lorsqu'on sélectionne la div la section juste après la div est impactée*/
+    margin-left: 0.5em;
+}
+
+aside #heart{
+    height: 2em;
+    width: 2em;
+    position: absolute;
+    right: 2em;
+    top: 2em;
+}
+
+aside #heart_display_none{
+    display: none;
+}
+
+aside section img{
+    width: 13.5em;
+    height: 18em;
+    object-fit: cover;
+    border-radius: 0.75em;
+    cursor: pointer;
+
+    transition: all 0.3s ease-in-out;
+}
+
+aside section p{
+    width: 100%;
+    color: white;
+    text-align: center;
+    margin-top: 1em;
+}
+
+aside section p:first-of-type{
+    font-size: 2em;
+}
+
+aside section form input[type="submit"]{
+    margin-top: 50%;
+    background: none;
+    border: none;
+    color: rgb(189, 189, 189);
+    background-color: rgba(75, 75, 75, 0.3);
+    padding: 1em;
+    border-radius: 1.25em;
+    font-size: 1em;
+    cursor: pointer;
+
+    transition: all 0.3s ease-in-out;
+}
+
+aside section form input[type="submit"]:hover{
+    background-color: rgba(167, 47, 47, 0.5);
+    transform: scale(1.1);
+    padding: 1em 1.25em 1em 1.25em;
+}
+
+
+
+
+
+
+
+/*Footer*/
+
+footer{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 1em 1em 0 0;
+    color: rgb(255, 255, 255);
+    background-color: rgb(12, 12, 12);
+}
+
+footer section{
+    width: 40%;
+    height: 80%;
+
+    transition: all 0.3s ease-in-out;
+}
+
+#burger_footer section{
+    width: 40%;
+}
+
+footer section p:first-of-type{
+    color: rgb(219, 0, 0);
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+footer ul{
+    width: 35%;
+    height: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    transition: all 0.3s ease-in-out;
+}
+
+#burger_footer ul{
+    width: 50%;
+}
+
+footer ul li a{
+    color: white;
+}
+
+footer p{
+    width: 100%;
+    margin: 1em 0 1em 0;
+    display: flex;
+    justify-content: center;
+}

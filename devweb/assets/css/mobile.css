@@ -1,0 +1,165 @@
+@media screen and (max-width: 1200px){
+    header section{
+        width: 20%; /*largeur de la nav*/
+    }
+
+    header section img{
+        margin-right: 1.5em;
+    }
+
+    header p a{
+        padding: 0.5em
+    }
+
+    header form{
+        width: 0%;
+        display: none;
+    }
+
+    nav{
+        backdrop-filter: blur(10px); /*Flou du bg*/
+        width: 0%;
+        height: fit-content;
+        max-width: 100%;
+        z-index: 10;
+        position: fixed;
+    }
+
+    #mobile_burger{ /*Pour le toggle*/
+        width: 100%;
+    }
+
+    nav section article img{
+        display: none;
+    }
+
+    #mobile_burger section article img{
+        display: flex;
+        height: 1.5em;
+    }
+
+    nav section article p{
+        display: none;
+    }
+
+    #mobile_burger section article p{
+        display: flex;
+        font-size: 1.5em;
+    }
+    
+    #mobile_burger #mobile_search{
+        display: flex;
+        font-size: 1.5em;
+    }
+
+    main{
+        width: 100%;
+    }
+
+    /*Cartes*/
+
+    main section{
+        height: fit-content;
+        justify-content: space-evenly;
+    }
+
+    main section article{
+        width: 11em;
+    }
+
+    #overflow{
+        width: 9.5em;
+        height: 14em;
+    }
+
+    main section article img{
+        width: 9.5em;
+        height: 14em;
+    }
+
+    main section article p{
+        width: 9.5em;
+        font-size: 1em;
+    }
+
+    #card_title{
+        margin-left: 1.1em;
+    }
+
+    #card_genre{
+        font-size: 0.8em;
+    }
+
+    main section article div{
+        width: 9.5em;
+    }
+
+    /*Barre de recheche pour mobile*/
+
+    main form{ /*barre de recherche*/
+        width: 80%;
+        position: relative;
+        margin-top: 2em;
+    }
+    
+    main form input[type="search"]{ /*ajustements barre de recherche*/
+        width: 100%;
+        height: 2.75em;
+        border-radius: 1.5em;
+        border: none;
+        outline: none;
+        background-color: rgb(24, 24, 27);
+        color: rgb(128, 128, 128);
+        padding: 8px 15px ;
+    
+        transition: all 0.4s ease-in-out;
+    }
+    
+    main form input[type="search"]:hover{ /*petit agrandissement quand on passe la souris dessus*/
+        transform: scale(1.01);
+    }
+    
+    main form input[type="search"]:focus{ /*changement de couleur + ombre quand on clique dessus*/
+        background-color: rgb(39, 39, 39);
+        color: rgb(255, 255, 255);
+        box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.6);
+        transform: scale(1.01);
+    }
+    
+    main #mobile_form input[type="submit"]{ /*ajustements boutton rechercher*/
+        background: none;
+        border: none;
+        outline: none;
+        color: rgb(109, 109, 109);
+        position: absolute;
+        top : -41%;
+        right: -15%;
+    
+        transition: all 0.4s ease-in-out;
+    }
+    
+    main form input[type="search"]:focus + input[type="submit"]{ /*qund on clique sur la barre de recherche, le boutton rechercher devient plus clair*/
+        color: rgb(167, 167, 167);
+    }
+
+    aside{
+        width: 100%;
+        margin-right: -100%;
+    }
+
+    #mobile_aside{
+        margin-right: 0;
+    }
+
+    footer{
+        justify-content: center;
+    }
+
+    footer section{
+        width: 90%;
+    }
+
+    footer ul{
+        width: 100%;
+    }
+}
