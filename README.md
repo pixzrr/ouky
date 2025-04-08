@@ -18,7 +18,7 @@ Nous avons donc décidé de réaliser un site de streaming
 -dernière vue
 ## Les fonctionnalités une fois connecté en administrateur
 -rajouter/suprimer des contenus  
--gérer(ajouter/suprimer) les utilisateurs  
+-gérer les utilisateurs  
 -modifier son identifiant et mot de passe
 -sélectionner par film  
 -sélectionner par série  
