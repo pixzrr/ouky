@@ -102,7 +102,7 @@ define("ROOT", "/devweb/");
             <section>
                 <a href="<?= ROOT ?>assets/pages/annonce.php">
                     <article>
-                        <img src="<?= ROOT ?>assets/images/clapperboard.png" alt="voir tous les films">
+                        <img src="<?= ROOT ?>assets/images/megaphone.png" alt="voir tous les films">
                         <p>Annonces</p>
                     </article>
                 </a>

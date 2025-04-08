@@ -38,7 +38,7 @@ if(isset($_GET['search'])){
 
 <?php
 } else {
-    echo 'non';
+    header('location:erreur.php');
 }
 ?>
 </main>
@@ -83,7 +83,7 @@ if(isset($_GET['search'])){
             if ($like_test == $a['id']){ ?>
                 <form action="user/likes/likes_remove.php" method="post">
                     <input type="hidden" name="id" value="<?= $a['id'] ?>">
-                    <input type="image" id="heart" src="../../images/heart_full.png" alt="obligatoire">
+                    <input type="image" id="heart" src="../images/heart_full.png" alt="obligatoire">
                 </form>
             <?php } else { ?>
                 <form action="user/likes/likes_add.php" method="post">

@@ -724,12 +724,14 @@ main .deconnexion a:hover{
 /*Infos*/
 
 ol,li{
-    color : white;
+    color : rgb(215, 215, 215);
     list-style-position: inside;
+    text-align: center;
  
 }
 main p{
-    color : white;
+    color : rgb(215, 215, 215);
+    text-align: center;
 }
 
 /*Aside*/

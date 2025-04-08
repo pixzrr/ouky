@@ -30,7 +30,7 @@
             </tr>
         </thead>
         <tbody>
-            <td colspan="4">
+            <td colspan="3">
             <section id="all_content">
 
 

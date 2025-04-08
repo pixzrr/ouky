@@ -16,7 +16,7 @@ $contenu = $connexion->query($sql);
 foreach ($contenu AS $c){?>
     <img id="content_bg" src="../../uploads/<?=$c['logo'] ?>">
 
-    <video controls src="../videos/test.mp4" type="video/mp4"></video>
+    <video controls src="../videos/test.mp4" type="video/mp4" alt="obligatoire"></video>
 
     <h2><?= $c['nom']?></h2>
 <?php } ?>

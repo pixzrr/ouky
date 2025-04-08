@@ -82,7 +82,7 @@ $film = $connexion->query($sql_films);
 <aside>
 
     <div id="view_less">
-        <img src="assets/images/chevron-left.png" alt="obligatoire">
+        <img src="assets/images/chevron-left.png" alt="obligatoire pour le SEO et pour l'accessibilité">
     </div>
 
     <section>
