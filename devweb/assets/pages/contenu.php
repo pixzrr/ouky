@@ -1,6 +1,6 @@
 <?php include '../inc/top.php';
 
-$id =  $_GET['id'];
+$id =  $_SESSION['content_id'];
 
 $sql = 'SELECT * FROM catalogue WHERE id="'.$id.'";';
 include '../inc/database.php';

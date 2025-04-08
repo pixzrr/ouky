@@ -1,31 +1,57 @@
 <?php include '../../inc/top.php';
-    $sql_filtre = 'SELECT * FROM catalogue WHERE type="serie";';
+    $sql_filtre = 'SELECT * FROM catalogue;';
     include '../../inc/database.php';
-    $serie = $connexion->query($sql_filtre);
+    $films = $connexion->query($sql_filtre);
 ?>
 <main>
-    <h2>Toutes les séries :</h2>
-    <section id="all_content">
-    <?php
-        foreach($serie AS $s):
+
+    <img id="pfp" src="../../images/user-round.png" alt="photo de profil">
+
+    <table id="profile_table">
+        <thead>
+            <tr>
+                <th><a id="profile_selected" href="profil.php">Activité</a></th>
+                <th><a href="likes/likes.php">Aimé</a></th>
+                <th><a href="profil_update/profil_edit.php"><img class="pfp" src="../../images/settings.png" alt="changer informations profile"></a></th>
+            </tr>
+        </thead>
+        <tbody>
+            <td colspan="4">
+            <section id="all_content">
+
+
+            <?php
+        foreach($films AS $f):
         ?>
-
-        <article id="s<?= $s['id']; ?>">
+            <article>
         <div id="overflow">
-            <img src="../../../uploads/<?= $s['logo'] ?>" alt="<?= $s['nom'] ?>">
+            <img src="../../../uploads/<?= $f['logo'] ?>" alt="<?= $f['nom'] ?>">
             </div>
-            <p><?= $s['year'] ?></p>
-            <p><?= $s['nom'] ?></p>
+            <p><?= $f['year'] ?></p>
+            <p><?= $f['nom'] ?></p>
 
-            <div>
-                <p id="card_genre"><?= $s['category'] ?></p>
-                <!--Catégorie : film ou série?-->
-                <p><?= $s['type'] ?></p>
-            </div>
-        </article>
-        <?php endforeach; ?>
-</section>
+                    <div>
+                    <p id="card_genre"><?= $f['category'] ?></p>
+                    <!--Catégorie : film ou série?-->
+                    <p><?= $f['type'] ?></p>
+                    </div>
+                    </div>
+                    </article>
+                    <?php endforeach; ?>
+
+
+
+
+
+                </section>
+            </td>
+        </tbody>
+
+    </table>
+
 </main>
+
+
 
 
 
@@ -46,7 +72,6 @@
         </div>
 
         <?php
-            if (!empty($_SESSION['user'])){
             $sql_user_id = 'SELECT id FROM user WHERE username LIKE "%'.$_SESSION['user'].'%";';
             $u_id = $connexion->query($sql_user_id);
             foreach ($u_id AS $u){
@@ -62,16 +87,16 @@
             
 
             if ($like_test == $a['id']){ ?>
-                <form action="../user/likes/likes_remove.php" method="post">
+                <form action="likes/likes_remove.php" method="post">
                     <input type="hidden" name="id" value="<?= $a['id'] ?>">
                     <input type="image" id="heart" src="../../images/heart_full.png" alt="obligatoire">
                 </form>
             <?php } else { ?>
-                <form action="../user/likes/likes_add.php" method="post">
+                <form action="likes/likes_add.php" method="post">
                     <input type="hidden" name="id" value="<?= $a['id'] ?>">
                     <input type="image" id="heart" src="../../images/heart.png" alt="obligatoire">
                 </form>
-                <?php } }?>
+                <?php } ?>
 
                 
 
@@ -82,11 +107,11 @@
 
         <p><?= $a['synopsis'] ?></p>
 
-        <form action="../user/views/view_add.php" method="post">
+        <form action="../contenu.php" method="get">
             <input type="hidden" name="id" value="<?= $a['id'] ?>">
             <input type="submit" value="Voir plus">
         </form>
     </section>
 </aside>
 <?php endforeach; ?>
-<?php include '../../inc/bottom.php'; ?>
+<?php include '../../inc/bottom.php'; ?> 

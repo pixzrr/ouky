@@ -9,7 +9,7 @@
         $user_id = $u['id'];
     }
 
-    $sql_likes = 'SELECT likes.id id_user, id_catalogue, user.username, catalogue.nom, catalogue.type, catalogue.author, catalogue.year, catalogue.synopsis, catalogue.logo, catalogue.category FROM likes
+    $sql_likes = 'SELECT * FROM likes
     INNER JOIN user ON likes.id_user = user.id
     INNER JOIN catalogue ON likes.id_catalogue = catalogue.id
     WHERE id_user='.$user_id.'
@@ -26,9 +26,7 @@
             <tr>
                 <th><a href="../profil.php">Activité</a></th>
                 <th><a id="profile_selected" href="likes.php">Aimé</a></th>
-                <th>Commentaires</th>
-                <th>Mes informations</th>
-                <th><a href="profil_update/profil_edit.php"><img class="pfp" src="../../../images/settings.png" alt="photo de profil"></a></th>
+                <th><a href="../profil_update/profil_edit.php"><img class="pfp" src="../../../images/settings.png" alt="photo de profil"></a></th>
             </tr>
         </thead>
         <tbody>

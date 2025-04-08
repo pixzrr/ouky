@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include '../../../inc/database.php';
 if(isset($_POST['username'])){
 
@@ -8,7 +9,8 @@ if(isset($_POST['username'])){
 
     $sql = "UPDATE user SET username='$username' , password='$password' WHERE id=$id";
 
-    if($connexion -> query($sql)){;
+    if($connexion -> query($sql)){
+        $_SESSION['connexion_error'] = 'Modifications enregistrées';
         header('location:../../connexion/connexion.php');
     }
 };

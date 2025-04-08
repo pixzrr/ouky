@@ -16,14 +16,19 @@ view_less[i].addEventListener('click', function(){
 if(screen.width < 1200){
 
     for (let i = 0 ; i < cards.length ; i++){
-    cards[i].addEventListener('click', function(){
-        if(more.getAttribute('id') != 'mobile_aside'){
-            more.setAttribute('id', 'mobile_aside');
-        } else {
-            more.setAttribute('id', '');
-        }
-    });
-}
+        cards[i].addEventListener('click', function(){
+        
+            if(more[i].getAttribute('id') != 'aside'){
+                for (let j = 0 ; j < cards.length ; j++){
+                    more[j].setAttribute('id', '');
+                }
+                more[i].setAttribute('id', 'aside');
+            } else {
+                more[i].setAttribute('id', '');
+            }
+        
+        });
+            }
 
 } else {
 
