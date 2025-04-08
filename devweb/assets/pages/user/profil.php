@@ -101,12 +101,12 @@
             
 
             if ($view_test == $a['id_catalogue']){ ?>
-                <form action="likes_remove.php" method="post">
+                <form action="likes/likes_remove.php" method="post">
                     <input type="hidden" name="id" value="<?= $a['id_catalogue'] ?>">
                     <input type="image" id="heart" src="../../images/heart_full.png" alt="obligatoire">
                 </form>
             <?php } else { ?>
-                <form action="likes_add.php" method="post">
+                <form action="likes/likes_add.php" method="post">
                     <input type="hidden" name="id" value="<?= $a['id_catalogue'] ?>">
                     <input type="image" id="heart" src="../../images/heart.png" alt="obligatoire">
                 </form>
