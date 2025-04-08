@@ -16,8 +16,9 @@
         foreach($infos AS $i):
         ?>
         <form action="user_update.php" method="post" enctype="multipart/form-data">
-            <input type="text" name="nom" value="<?= $i['username'] ?>" maxlength="15">
-            <input type="text" name="nom" value="<?= $i['password'] ?>" minlength="10" maxlength="75">
+            <input type="text" name="username" value="<?= $i['username'] ?>" maxlength="15">
+            <input type="text" name="password" value="<?= $i['password'] ?>" minlength="10" maxlength="75">
+            <input type="hidden" name="id" value="<?= $i['id']?>">
             <input type="submit" value="Mettre à jour">
         </form>
         <?php endforeach; ?>
